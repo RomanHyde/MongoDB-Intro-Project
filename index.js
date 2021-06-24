@@ -4,6 +4,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const { getMaxListeners } = require('./models/user');
 const User = require('./models/user');
+const router = require('./routes');
 const userRouter = require('./routes');
 
 
@@ -18,8 +19,6 @@ mongoose.connect('mongodb://localhost:27017/signup', {
     useNewUrlParser: true,
     useUnifiedTopology: true 
 });
-
-
 
 
 app.listen(port, () => {
