@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('./models/user');
 
+// pull user info
 router.get('/', async (req, res) => {
     const users = await User.find({});
     // res.status(200).render('login');
@@ -9,7 +10,7 @@ router.get('/', async (req, res) => {
     res.status(200).json(users);
 });
 
-// post user first and then confirm
+// post user information first and then confirm
 router.post('/',(req,res) => {
     let name = req.body.name;
     let email = req.body.email;
